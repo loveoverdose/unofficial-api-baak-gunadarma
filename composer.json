@@ -1,0 +1,12 @@
+{
+    "name": "al/unofficial-api-baak-gunadarma",
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "predis/predis": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "GunadarmaAPI\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^jadkul/([a-zA-Z0-9]+)$ ./index.php?kategori=jadkul&raw_data=$1 [L,QSA]
+RewriteRule ^kalenderakademik$ ./index.php?kategori=kalenderakademik&raw_data=kalenderakademik [L,QSA]
+RewriteRule ^mhsbaru/(nama|kelas)/([a-zA-Z0-9\s]+)$ ./index.php?kategori=mhsbaru&subkategori=$1&raw_data=$2 [L,QSA]
+RewriteRule ^kelasbaru/(nama|kelas)/([a-zA-Z0-9\s]+)$ ./index.php?kategori=kelasbaru&subkategori=$1&raw_data=$2 [L,QSA]
+
+# Jika nama folder atau file tidak ada maka alihkan pengguna ke halaman awal
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . / [R=301]
