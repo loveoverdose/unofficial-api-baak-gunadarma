@@ -48,7 +48,7 @@
                 $nilaisementara[$kelas][$hari][] = $jadwal;
                 $this->hasilakhir[$kelas][$hari] = array_merge(...$nilaisementara[$kelas][$hari]);
             }
-        return $this->response($this->hasilakhir);
+        return $this->response();
         }
 
         /*
@@ -73,7 +73,7 @@
                 }
             }
 
-        return $this->response($this->hasilakhir);
+        return $this->response();
         }
 
         /*
@@ -97,7 +97,7 @@
                     $this->hasilakhir[$kelas] = array_merge(...$nilaisementara[$kelas]);
                 }
             }
-        return $this->response($this->hasilakhir);
+        return $this->response();
         }
 
         /*
@@ -112,7 +112,7 @@
             foreach($hasil[1] as $jadwalakademik) {
                 $this->hasilakhir[$tahunakademik[1]][] = strip_tags($jadwalakademik);
             }
-        return $this->response($this->hasilakhir);
+        return $this->response();
         }
 
         /*
@@ -139,7 +139,7 @@
         return trim(substr($document_html, $mulai + $panjang, $selesai));
         }
 
-        private function response($data = []) {
-            return json_encode(['status' => $this->status, 'data' => $data]);
+        private function response() {
+            return json_encode(['status' => $this->status, 'data' => $this->hasilakhir]);
         }
     }
